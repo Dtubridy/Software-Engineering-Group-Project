@@ -40,10 +40,26 @@ router.get('/about', function(req, res, next) {
   res.render('liveScore', { title: 'Express' });
 });
 
-/* Get upcoming Matches page */
-  router.get('/upcomingMatches', function(req, res, next) {
-  res.render('upcomingMatches', { title: 'Express' });
+/* Get upcoming Prem Matches page */
+  router.get('/championshipFixtures', function(req, res, next) {
+  res.render('championshipFixtures', { title: 'Express' });
 });
+
+/* Get upcoming Prem Matches page */
+  router.get('/leagueOneFixtures', function(req, res, next) {
+  res.render('leagueOneFixtures', { title: 'Express' });
+});
+
+/* Get upcoming Prem Matches page */
+  router.get('/leagueTwoFixtures', function(req, res, next) {
+  res.render('leagueTwoFixtures', { title: 'Express' });
+});
+
+/* Get upcoming Prem Matches page */
+  router.get('/premFixtures', function(req, res, next) {
+  res.render('premFixtures', { title: 'Express' });
+});
+
 
 router.get('/chat', function(req, res, next) {
   res.render('chat', { title: 'Express' });

@@ -1,6 +1,6 @@
 $(function(){
    	//make connection
-	var socket = io.connect('http://danu7.it.nuigalway.ie:8645')
+	var socket = io.connect('http://danu7.it.nuigalway.ie:8628')
 
 	//buttons and inputs
 	var message = $("#message")

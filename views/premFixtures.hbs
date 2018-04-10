@@ -1,34 +1,19 @@
 <html lang="en";
 <head>
-<style>
-        table, th, td 
-        {
-            margin:10px 0;
-            border:solid 1px #333;
-            padding:2px 4px;
-            font:15px Verdana;
-        }
-        th {
-            font-weight:bold;
-        }
-    </style>
+
 <meta charset = "UTF-8">
+<link href="/stylesheets/fixturesTables.css" rel="stylesheet">
 </head>
 
 <body>
     <div id="showData"></div>
 
 
-    
-    
-    
-    
-
 <script>
 
 $.ajax({
   headers: {'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797'},
-  url: 'http://api.football-data.org/alpha/fixtures?timeFrame=n40',
+  url: 'http://api.football-data.org/alpha/fixtures?league=PL',
   dataType: 'json',
   type: 'GET',
 }).done(function(response){
@@ -71,7 +56,26 @@ $.ajax({
 
         // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
 
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
         
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Home Team";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML=""
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Away Team";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Date";
+            tr.appendChild(th);
+        
+
 
         // ADD JSON DATA TO THE TABLE AS ROWS.
         for (var i = 0; i < response.fixtures.length; i++) {

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <style>
+
+</style>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +19,9 @@
 
     <!-- Custom styles for this template -->
     <link href="/stylesheets/main.css" rel="stylesheet">
+      <link href="/stylesheets/navbar.css" rel="stylesheet">
+      
+      
 
     <!-- Fonts from Google Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
@@ -46,13 +53,26 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+              
+    
+           <li><div class="dropdown">
+  <button class="dropbtn">Upcoming Matches</button>
+  <div class="dropdown-content">
+    <a href="/premFixtures">Premiership</a>
+    <a href= "/championshipFixtures">Championship</a>
+    <a href="/leagueOneFixtures">League 1</a>
+      <a href="/leagueTwoFixtures">League 2</a>
+  </div></li>
             <li><a href="/users/login">Already a member?</a></li>
              <li><a href="/feed">Feeds</a></li>
               <li><a href="/users/register">Sign Up?</a></li>
-              <li><a href="#" id="logout">Logout</a></li>
               <li><a href="/about">About us</a></li>
+              <li><a href="/chat">Live Chat</a></li>
+              <li><a href="#" id="logout">Logout</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
+          <!--/.nav-collapse -->
+          
        
       </div>
     </div>

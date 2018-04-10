@@ -1,0 +1,123 @@
+<html lang="en";
+<head>
+
+<meta charset = "UTF-8">
+<link href="/stylesheets/fixturesTables.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="showData"></div>
+
+
+<script>
+
+$.ajax({
+  headers: {'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797'},
+  url: 'http://api.football-data.org/alpha/fixtures?league=ELC',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response){
+  var regex = /.*?(\d+)$/;
+  var fifteen_games = [];
+  if(response.fixtures.length>15){
+    var counter = 0;
+   
+    for(var i = 0; i <15; i++){
+      fifteen_games[counter] = response.fixtures[i];
+      counter++;
+    }
+  }else{
+    var counter = 0;
+    for(var i = 0; i < response.fixtures.length; i++){
+      fifteen_games[counter] = response.fixtures[i];
+      counter++;
+    }
+  }
+  
+   
+
+  console.log(fifteen_games);
+  var res = regex.exec(fifteen_games[0].result.goalsHomeTeam[0]);
+
+  var dateString = fifteen_games[0].date;
+  var date = formatDate(dateString);
+
+  
+  for(var i=0; i<fifteen_games.length;i++){
+    var rowNum = (i+2).toString();
+    $(".row"+rowNum+" .col1").append(formatDate(fifteen_games[i].date));
+    $(".row"+rowNum+" .col2").append(fifteen_games[i].homeTeamName);
+    $(".row"+rowNum+" .col3").append(fifteen_games[i].awayTeamName);
+  
+  }
+    
+
+       var table = document.createElement("table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Home Team";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML=""
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Away Team";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Date";
+            tr.appendChild(th);
+        
+
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < response.fixtures.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.fixtures[i].homeTeamName;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = "v";
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.fixtures[i].awayTeamName;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.fixtures[i].date;
+            
+            }
+    
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+});
+
+function formatDate(date){
+  var unformattedDate = new Date(date);
+  var dayOfWeek = unformattedDate.getDay();
+  var day = ''+ unformattedDate.getDate();
+  var month = ''+(unformattedDate.getMonth()+1);
+  var year = unformattedDate.getFullYear();
+  var hours = unformattedDate.getHours();
+  var minutes = unformattedDate.getMinutes();
+
+  if(minutes<10){
+    minutes = "0"+minutes;
+  }
+
+}
+    
+
+
+
+
+</script>
+    
+</body>
