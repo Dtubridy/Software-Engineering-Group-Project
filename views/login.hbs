@@ -1,0 +1,64 @@
+<div class="col-md-8 col-md-offset-2">
+    <h2>Login</h2>
+    <form class="form-horizontal" role="form" id="log-form">
+     
+        <body background = "/images/bg_floodlights.jpg">
+
+        <div class="form-group mt">
+            <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-sm-3">
+                <label for="inputUsername" style= "color : white" class="control-label">Username</label>  
+            </div>
+            <div class="col-sm-9">
+                <input type="text" class="form-control input-lg required" id="inputUsername" placeholder="@username">
+            </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-sm-3">
+                <label for="inputPassword" style= "color : white" class="control-label">Password</label>
+            </div>
+            <div class="col-sm-9">
+                <input type="password" class="form-control input-lg required" id="inputPassword"
+                       placeholder="Password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row col-sm-offset-2 col-sm-10 mt" style="padding-left:10%">
+                <button type="submit"  class="btn btn-warning btn-lg">Sign In</button>
+            
+            <div class="g-signin2 row col-sm-2" data-onsuccess="onSignIn" style="padding-left:10%; padding-top: 7px"></div>
+                 
+            </div>
+            
+            
+        </div>
+            <html lang="en">
+  
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="715341256617-1u3cpr3aq30q4tdonn17j8927ccj7tho.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
+  <body>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script><script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
+  </body>
+</html>
+    </form>
+</div>

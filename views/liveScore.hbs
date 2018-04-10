@@ -1,0 +1,58 @@
+<head>
+<meta charset = "UTF-8">
+</head>
+
+<body>
+
+<script>
+
+$.ajax({
+  headers: { 'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797' },
+  url: 'http://api.football-data.org/alpha/fixtures?timeFrame=p40',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+  var regex = /.*?(\d+)$/;
+  var fifteen_games = [];
+  if(response.fixtures.length>15){
+    var counter = 0;
+    for(var i=response.fixtures.length-1;i>response.fixtures.length-16;i--){
+      fifteen_games[counter] = response.fixtures[i];
+      counter++;
+    }
+  }
+  console.log(fifteen_games);
+
+  var res = regex.exec(fifteen_games[0].result.goalsHomeTeam[0]);
+
+  var dateString = fifteen_games[0].date;
+  var date = formatDate(dateString);
+
+  for(var i=0;i<fifteen_games.length;i++){
+    var rowNum = (i+2).toString();
+      $(".row"+rowNum+" .col1").append(formatDate(fifteen_games[i].date));
+      $(".row"+rowNum+" .col2").append(fifteen_games[i].homeTeamName);
+      $(".row"+rowNum+" .col3").append(fifteen_games[i].result.goalsHomeTeam);
+      $(".row"+rowNum+" .col4").append(fifteen_games[i].result.goalsAwayTeam);
+      $(".row"+rowNum+" .col5").append(fifteen_games[i].awayTeamName);
+  }
+});
+
+function formatDate(date){
+  var unformattedDate = new Date(date);
+  var dayOfWeek = unformattedDate.getDay();
+  var day = ''+ unformattedDate.getDate();
+  var month = ''+(unformattedDate.getMonth()+1);
+  var year = unformattedDate.getFullYear();
+  var hours = unformattedDate.getHours();
+  var minutes = unformattedDate.getMinutes();
+
+  if(minutes<10){
+    minutes = "0"+minutes;
+  }
+
+}
+
+</script>
+</body>
+</html>
