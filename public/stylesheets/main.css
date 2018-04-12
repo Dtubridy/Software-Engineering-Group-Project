@@ -1,7 +1,7 @@
 
 
 body {
-    background: images/background.jpg no-repeat center center fixed; 
+    background: images/BackgroundGreen.png no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -19,39 +19,39 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family:"Comic Sans MS", cursive, sans-serif;
     font-weight: 1000;
-    color: white;
+    color: black;
 }
 
 h1 {
 	font-size: 40px;
-        color : white;
+        color : black;
 }
 
 h2 {
-       color : white;
+       color : black;
        font-weight: 500;
 
 }
 
 h3 {
-	color: white;
+	color: black;
 	font-weight: 400;
 }
 
 h4 {
-	color: white;
+	color: black;
 	font-weight: 500;
 
 }
 
 h5 {
-        color: white;
+        color: black;
         font-weight: 500;
 
 }
 
 h6 {
-        color: white;
+        color: black;
           font-weight: 500;
 
 }
@@ -59,10 +59,11 @@ h6 {
 
 /* Paragraph & Typographic */
 p {
-    color : white;
+    color : black;
     line-height: 28px;
     margin-bottom: 25px;
     font-size: 16px;
+    font-weight : 450;
 }
 
 .centered {
@@ -83,7 +84,7 @@ a {
 
 a:hover,
 a:focus {
-    color: white;
+    color: black;
     text-decoration: none;
     outline: 0;
 }
@@ -107,16 +108,16 @@ a:after {
 }
 
 .navbar-default {
-	background-color:#0000b3;
+	background-color:#f8f8f8 ;
 	border-color: transparent;
 }
 
 .navbar-default .navbar-brand {
-	color: white;
+	color: black;
 }
 
 .navbar-default .navbar-nav > li > a {
-	color: white;
+	color: black;
 }
 
 /* Helpers */

@@ -31,9 +31,23 @@ router.get('/about', function(req, res, next) {
   });
   
   /* Get Leaderboard page */
-  router.get('/leaderboard', function(req, res, next) {
-  res.render('leaderboard', { title: 'Express' });
+  router.get('/premLeaderboard', function(req, res, next) {
+  res.render('premLeaderboard', { title: 'Express' });
 });
+
+/* Get Leaderboard page */
+  router.get('/champLeaderboard', function(req, res, next) {
+  res.render('champLeaderboard', { title: 'Express' });
+});
+/* Get Leaderboard page */
+  router.get('/leagueTwoLeaderboard', function(req, res, next) {
+  res.render('leagueTwoLeaderboard', { title: 'Express' });
+});
+/* Get Leaderboard page */
+  router.get('/leagueOneLeaderboard', function(req, res, next) {
+  res.render('leagueOneLeaderboard', { title: 'Express' });
+});
+
 
 /* Get LiveScore page */
   router.get('/liveScore', function(req, res, next) {

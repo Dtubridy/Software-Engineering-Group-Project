@@ -1,6 +1,6 @@
 <html lang="en";
 <head>
-<link href="/stylesheets/fixturesTables.css" rel="stylesheet">
+<link href="/stylesheets/champLeaderboard.css" rel="stylesheet">
 <meta charset = "UTF-8">
 </head>
 
@@ -10,7 +10,7 @@
 <script>
 $.ajax({
   headers: { 'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797' },
-  url: 'http://api.football-data.org/v1/competitions/445/leagueTable',
+  url: 'http://api.football-data.org/v1/competitions/448/leagueTable',
   dataType: 'json',
   type: 'GET',
 }).done(function(response) {
@@ -25,8 +25,8 @@ var fifteen_games = [];
     }
 }else{
     var counter = 0;
-    for(var i = 0; i < response.standings.length; i++){
-      fifteen_games[counter] = response.standings[i];
+    for(var i = 0; i < response.standing.length; i++){
+      fifteen_games[counter] = response.standingg[i];
       counter++;
     }
   }
@@ -45,6 +45,10 @@ var fifteen_games = [];
     
             var th = document.createElement("th");  // TABLE HEADER.
             th.innerHTML="Team Name"
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Pl"
             tr.appendChild(th);
     
             var th = document.createElement("th");  // TABLE HEADER.
@@ -78,35 +82,38 @@ var fifteen_games = [];
 
 
         // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < response.standings.length; i++) {
+        for (var i = 0; i < response.standing.length; i++) {
 
             tr = table.insertRow(-1);
 
             
                 var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].position;
+                tabCell.innerHTML = response.standing[i].position;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings.teamName;
+                tabCell.innerHTML = response.standing[i].teamName;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].wins;
+                tabCell.innerHTML = response.standing[i].playedGames;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].draws;
+                tabCell.innerHTML = response.standing[i].wins;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].losses;
+                tabCell.innerHTML = response.standing[i].draws;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].goals;
+                tabCell.innerHTML = response.standing[i].losses;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].goalsAgainst;
+                tabCell.innerHTML = response.standing[i].goals;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].goalDifference;
+                tabCell.innerHTML = response.standing[i].goalsAgainst;
             var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = response.standings[i].points;
+                tabCell.innerHTML = response.standing[i].goalDifference;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].points;
             
             }
     
         var divContainer = document.getElementById("showData");
         divContainer.innerHTML = "";
-        divContainer.appendChild(table);});
+        divContainer.appendChild(table);
+});
   
 </script>
 </body>

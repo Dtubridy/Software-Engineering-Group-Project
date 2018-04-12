@@ -1,0 +1,31 @@
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+ td,  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+ 
+ tr:nth-child(2){background-color: #ffd11a;}
+ tr:nth-child(3){background-color: #99ffcc;}
+ tr:nth-child(4){background-color: #99ffcc;}
+ tr:nth-child(5){background-color: #99ffcc;}
+ tr:nth-child(6){background-color: #e6fff2;}
+ tr:nth-child(7){background-color: #e6fff2;}
+ tr:nth-child(19){background-color: #ff9999;}
+ tr:nth-child(20){background-color: #ff9999;}
+ tr:nth-child(21){background-color: #ff9999;}
+ 
+
+ tr:hover {background-color: #ddd;}
+
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}

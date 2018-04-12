@@ -6,6 +6,8 @@
   transform: translateY(-50%);
 }
 
+$('section#chatroom').scrollTop($('section#chatroom')[0].scrollHeight);
+
 * {
     box-sizing: border-box;
 }
@@ -29,17 +31,17 @@ h1 {
 }
 
 div#change_username, section#input_zone {
-    border:10px outset blue;
+    border:10px outset #99ff99;
 }
 
 div#change_username {
     height: 3%;
     display: inline-block;
-    background-color: #0000b3;
+    background-color: #99ff99;
 }
 
-section#chatroom {
-    border: 5px inset #0000b3;
+#chatroom {
+    border: 5px inset #99ff99;
     height: 300px;
     	
     overflow: auto;
@@ -48,7 +50,7 @@ section#chatroom {
 section#input_zone {
     height: 7%;
     text-align: center;
-    background-color: #0000b3;
+    background-color: #99ff99;
 }
 
 .vertical-align {
@@ -88,9 +90,10 @@ p.message {
 }
 
 .message:nth-child(even) {
-    background-color: #81DAF5;
+    background-color: #e6ffe6;
 }
 
 .message:nth-child(odd) {
-    background-color: #81BEF7;
+    background-color:#ccffcc;
 }
+

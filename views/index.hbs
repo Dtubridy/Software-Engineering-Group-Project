@@ -17,35 +17,28 @@
 		<div class="row mt centered">
 			<div class="col-lg-6 col-lg-offset-3">
                         <br>
-                        <img class="img-circle" src="/images/stadium.jpg" alt="" width = "500" >
-
-				<h1>Welcome to Live Score<br/>+1</h1>
+                        
+				<h1>Welcome to Pipe Piper<br/>+1</h1>
+                                <br>
 				
 			</div>
 		</div><!-- /row -->
 
      <body background = "/images/bg_floodlights.jpg">
-
 		
-		<div class="row mt centered">
+		<div>
 			<div class="col-lg-4">
-				<a href="/leaderboard"><img class="img-circle" src="/images/FireBall.jfif" width="180" height="250" alt="" >
-				<h4>1 - League tables</h4>
-				<p>Check who's on top.</p>
+ <img src="/images/PremierLogo.png" class = "circle">
+ <img src="/images/PremierLogo.png" class = "circle">
+ <img src="/images/PremierLogo.png" class = "circle">
+ <img src="/images/PremierLogo.png" class = "circle">
                 </a>
 			</div><!--/col-lg-4 -->
-
 			<div class="col-lg-4">
-				<a href="/liveScore"><img class="img-circle" src="/images/liveScore.jpg" width="180" height="250" alt="" >
-				<h4>2 - Live Score</h4>
-				<p>Go live now.</p>
                 </a>
 			</div>
 
               <div class="col-lg-4">
-				<a href="/upcomingMatches"><img class="img-circle" src="/images/vsImage2.jpg"  width="180" height="250" alt="" >
-				<h4>3 - Upcoming Matches </h4>
-				<p>Check when next matches are scheduled.</p>
                 </a>
 			</div>
 
@@ -59,7 +52,8 @@
  <link rel='stylesheet' href='/stylesheets/chatStyle.css' >
 <meta http-equiv="Content-Type" const="text/html;charset=UTF-8" />
     <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
-    <br>    
+    <br> 
+    <h1> Live Chat</h1>   
     
 
     <section>
@@ -69,18 +63,25 @@
       </div>
     </section>
 
-  <div id = "chat" style = "background : #b3ecff">
+  
 
-    <section id="chatroom">
+
+<div id="x" style="background-color: #99ff99">
+	
+    <div id="chatroom">
       <section id="feedback"></section>
-    </section>
-
-    
+	 
+    </div>
+ 
 
     <section id="input_zone"> 
       <input id="message"  type="text" />
       <button id="send_message"  type="button">Send</button>
+ 
     </section>
+
+<script>var objDiv = document.getElementById("chatroom");
+objDiv.scrollTop = objDiv.scrollHeight;</script>
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="javascripts/chat.js"></script>
