@@ -48,6 +48,10 @@ router.get('/about', function(req, res, next) {
   res.render('leagueOneLeaderboard', { title: 'Express' });
 });
 
+router.get('/Test', function(req, res, next) {
+  res.render('Test', { title: 'Express' });
+});
+
 
 /* Get LiveScore page */
   router.get('/liveScore', function(req, res, next) {

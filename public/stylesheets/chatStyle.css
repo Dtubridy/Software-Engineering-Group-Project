@@ -44,7 +44,7 @@ div#change_username {
     border: 5px inset #99ff99;
     height: 300px;
     	
-    overflow: auto;
+    overflow: scroll;
 }
 
 section#input_zone {

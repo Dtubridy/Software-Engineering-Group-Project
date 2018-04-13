@@ -66,24 +66,26 @@
   
 
 
-<div id="x" style="background-color: #99ff99">
+<div style="background-color: #99ff99">
 	
     <div id="chatroom">
       <section id="feedback"></section>
-	 
     </div>
  
+
+
 
     <section id="input_zone"> 
       <input id="message"  type="text" />
       <button id="send_message"  type="button">Send</button>
  
     </section>
-$("#mydiv").scrollTop($("#mydiv")[0].scrollHeight);
-<script>var objDiv = document.getElementById("chatroom");
-objDiv.scrollTop = objDiv.scrollHeight;</script>
+
+
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>var d = $('#chatroom');
+d.scrollTop(d.prop("scrollHeight"));</script>
     <script src="javascripts/chat.js"></script>
 	</div>
 
