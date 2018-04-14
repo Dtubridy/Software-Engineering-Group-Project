@@ -32,20 +32,50 @@ router.get('/about', function(req, res, next) {
   
   /* Get Leaderboard page */
   router.get('/premLeaderboard', function(req, res, next) {
-  res.render('premLeaderboard', { title: 'Express' });
+  res.render('leaderboard/premLeaderboard', { title: 'Express' });
 });
 
 /* Get Leaderboard page */
   router.get('/champLeaderboard', function(req, res, next) {
-  res.render('champLeaderboard', { title: 'Express' });
+  res.render('leaderboard/champLeaderboard', { title: 'Express' });
 });
 /* Get Leaderboard page */
   router.get('/leagueTwoLeaderboard', function(req, res, next) {
-  res.render('leagueTwoLeaderboard', { title: 'Express' });
+  res.render('leaderboard/leagueTwoLeaderboard', { title: 'Express' });
 });
 /* Get Leaderboard page */
   router.get('/leagueOneLeaderboard', function(req, res, next) {
-  res.render('leagueOneLeaderboard', { title: 'Express' });
+  res.render('leaderboard/leagueOneLeaderboard', { title: 'Express' });
+});
+
+/* Get Leaderboard page */
+  router.get('/ligue1Leaderboard', function(req, res, next) {
+  res.render('leaderboard/ligue1Leaderboard', { title: 'Express' });
+});
+
+/* Get Leaderboard page */
+  router.get('/eredivisieLeaderboard', function(req, res, next) {
+  res.render('leaderboard/eredivisieLeaderboard', { title: 'Express' });
+});
+
+/* Get Leaderboard page */
+  router.get('/ligaPortugalLeaderboard', function(req, res, next) {
+  res.render('leaderboard/ligaPortugalLeaderboard', { title: 'Express' });
+});
+
+/* Get Leaderboard page */
+  router.get('/laLigaLeaderboard', function(req, res, next) {
+  res.render('leaderboard/laLigaLeaderboard', { title: 'Express' });
+});
+
+/* Get Leaderboard page */
+  router.get('/SerieALeaderboard', function(req, res, next) {
+  res.render('leaderboard/SerieALeaderboard', { title: 'Express' });
+});
+
+/* Get Leaderboard page */
+  router.get('/bundesligaLeaderboard', function(req, res, next) {
+  res.render('leaderboard/bundesligaLeaderboard', { title: 'Express' });
 });
 
 router.get('/Test', function(req, res, next) {
@@ -60,22 +90,47 @@ router.get('/Test', function(req, res, next) {
 
 /* Get upcoming Prem Matches page */
   router.get('/championshipFixtures', function(req, res, next) {
-  res.render('championshipFixtures', { title: 'Express' });
+  res.render('fixtures/championshipFixtures', { title: 'Express' });
 });
 
 /* Get upcoming Prem Matches page */
   router.get('/leagueOneFixtures', function(req, res, next) {
-  res.render('leagueOneFixtures', { title: 'Express' });
+  res.render('fixtures/leagueOneFixtures', { title: 'Express' });
 });
 
 /* Get upcoming Prem Matches page */
   router.get('/leagueTwoFixtures', function(req, res, next) {
-  res.render('leagueTwoFixtures', { title: 'Express' });
+  res.render('fixtures/leagueTwoFixtures', { title: 'Express' });
 });
 
 /* Get upcoming Prem Matches page */
+  router.get('/bundesligaFixtures', function(req, res, next) {
+  res.render('fixtures/bundesligaFixtures', { title: 'Express' });
+});
+
+/* Get upcoming Prem Matches page */
+  router.get('/ligue1Fixtures', function(req, res, next) {
+  res.render('fixtures/ligue1Fixtures', { title: 'Express' });
+});
+/* Get upcoming Prem Matches page */
   router.get('/premFixtures', function(req, res, next) {
-  res.render('premFixtures', { title: 'Express' });
+  res.render('fixtures/premFixtures', { title: 'Express' });
+});
+/* Get upcoming Prem Matches page */
+  router.get('/laLigaFixtures', function(req, res, next) {
+  res.render('fixtures/laLigaFixtures', { title: 'Express' });
+});
+/* Get upcoming Prem Matches page */
+  router.get('/SerieAfixtures', function(req, res, next) {
+  res.render('fixtures/SerieAfixtures', { title: 'Express' });
+});
+/* Get upcoming Prem Matches page */
+  router.get('/eredivisieFixtures', function(req, res, next) {
+  res.render('fixtures/eredivisieFixtures', { title: 'Express' });
+});
+/* Get upcoming Prem Matches page */
+  router.get('/ligaPortugalFixtures', function(req, res, next) {
+  res.render('fixtures/ligaPortugalFixtures', { title: 'Express' });
 });
 
 

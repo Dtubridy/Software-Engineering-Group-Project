@@ -51,13 +51,45 @@ h5 {
 }
 
 h6 {
+        font-size: 40px;
+        position: absolute;
+        top : 50%;
+        left: 50%
         color: black;
+        transform: translate(-50%, -50%);
           font-weight: 500;
 
 }
+h20 {
+ font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif;
+ color: #FAF9F9;
+
+  font-size: 70px;
+  font-weight: 100;
+  bottom: 50%;
+  
+  font-style:bold;
+}
+
+
 
 
 /* Paragraph & Typographic */
+mainsilver{
+background: #d4d6d8;
+z-index:1;
+}
+
+p20 {
+ font-family: 'Lato',Helvetica,Arial,Lucida,sans-serif;
+ color: #088719;
+
+  font-size: 30px;
+  font-weight: 100;
+  bottom: 50%;
+  
+  font-style:bold;
+}
 p {
     color : black;
     line-height: 28px;

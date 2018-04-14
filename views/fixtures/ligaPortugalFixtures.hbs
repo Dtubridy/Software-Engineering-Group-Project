@@ -2,10 +2,18 @@
 <head>
 
 <meta charset = "UTF-8">
+<link href="/stylesheets/bootstrap.css" rel="stylesheet">
 <link href="/stylesheets/fixturesTables.css" rel="stylesheet">
+<link href="/stylesheets/particles.css" rel="stylesheet"  type="text/css">
 </head>
 
 <body>
+    <div id="particles-js" >
+        <div id="intro">
+            <h20>Liga Portugal Fixtures</h20>
+            
+    </div>
+    </div>
     <div id="showData"></div>
 
 
@@ -13,7 +21,7 @@
 
 $.ajax({
   headers: {'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797'},
-  url: 'http://api.football-data.org/alpha/fixtures?league=EL2',
+  url: 'http://api.football-data.org/alpha/fixtures?league=PPL',
   dataType: 'json',
   type: 'GET',
 }).done(function(response){
@@ -119,5 +127,9 @@ function formatDate(date){
 
 
 </script>
+    <script src="/javascripts/particles.js"></script>
+    <script src="/javascripts/particles.min.js"></script>
+    <script src="/javascripts/particlesapp.js"></script>
     
 </body>
+</html>

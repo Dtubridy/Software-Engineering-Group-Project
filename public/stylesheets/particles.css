@@ -1,0 +1,39 @@
+body
+{
+    margin:0;
+    padding;0;
+    height: 20 vh;
+    
+}
+
+#particles-js
+{
+     background-image: url('/images/pg_bg.jpg');
+     height: 250px;
+     z-index:1;
+}
+#intro {
+  position: absolute;
+  left: 0;
+  top: 18%;
+  
+  width: 100%;
+  text-align: center;
+h20 {
+  color: #FAF9F9;
+text-transform: uppercase;
+  font-size: 160px;
+  font-weight: 100;
+  letter-spacing: 0.015em;
+  font-style:bold;
+}
+h20::after {
+  content: '';
+  width: 80px;
+  display: block;
+  background: #fff;
+  height: 10px;
+  margin: 30px auto;
+  line-height: 1.1;
+  }
+  

@@ -1,0 +1,130 @@
+<html lang="en";
+<head>
+<link href="/stylesheets/premLeaderboard.css" rel="stylesheet">
+<link href="/stylesheets/particles.css" rel="stylesheet"  type="text/css">
+<meta charset = "UTF-8">
+</head>
+
+<body>
+    <div id="particles-js" >
+        <div id="intro">
+            <h20>Bundesliga Standings</h20>
+            
+    </div>
+    </div>
+    <div id="showData"></div>
+
+<script>
+$.ajax({
+  headers: { 'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797' },
+  url: 'http://api.football-data.org/v1/competitions/452/leagueTable',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+  // do something with the response, e.g. isolate the id of a linked resource        
+  var regex = /.*?(\d+)$/; // the ? makes the first part non-greedy
+var fifteen_games = [];
+  if(response.standing.length>15){
+    var counter = 0;
+    for(var i = 0; i <15; i++){
+      fifteen_games[counter] = response.standing[i];
+      counter++;
+    }
+}else{
+    var counter = 0;
+    for(var i = 0; i < response.standing.length; i++){
+      fifteen_games[counter] = response.standingg[i];
+      counter++;
+    }
+  }
+  console.log(fifteen_games);
+  
+  var table = document.createElement("table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Pos";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Team Name"
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Pl"
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="W";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="D";
+            tr.appendChild(th);
+    
+            var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="L";
+            tr.appendChild(th);
+         
+             var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="GF";
+            tr.appendChild(th);
+    
+             var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="GA";
+            tr.appendChild(th);
+         
+             var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="GD";
+            tr.appendChild(th);
+    
+             var th = document.createElement("th");  // TABLE HEADER.
+            th.innerHTML="Pts";
+            tr.appendChild(th);
+        
+
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < response.standing.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].position;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].teamName;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].playedGames;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].wins;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].draws;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].losses;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].goals;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].goalsAgainst;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].goalDifference;
+            var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = response.standing[i].points;
+            
+            }
+    
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+});
+  
+</script>
+    <script src="/javascripts/particles.js"></script>
+    <script src="/javascripts/particles.min.js"></script>
+    <script src="/javascripts/particlesapp.js"></script>
+</body>
+</html>

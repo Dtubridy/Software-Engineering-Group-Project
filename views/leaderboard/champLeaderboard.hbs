@@ -1,16 +1,24 @@
 <html lang="en";
 <head>
 <link href="/stylesheets/champLeaderboard.css" rel="stylesheet">
+<link href="/stylesheets/particles.css" rel="stylesheet"  type="text/css">
+
 <meta charset = "UTF-8">
 </head>
 
 <body>
+    <div id="particles-js" >
+        <div id="intro">
+            <h20>Championship Standings</h20>
+            
+    </div>
+    </div>
     <div id="showData"></div>
 
 <script>
 $.ajax({
   headers: { 'X-Auth-Token': '68bbe376c46e411d809b01d6dc549797' },
-  url: 'http://api.football-data.org/v1/competitions/447/leagueTable',
+  url: 'http://api.football-data.org/v1/competitions/446/leagueTable',
   dataType: 'json',
   type: 'GET',
 }).done(function(response) {
@@ -116,5 +124,8 @@ var fifteen_games = [];
 });
   
 </script>
+    <script src="/javascripts/particles.js"></script>
+    <script src="/javascripts/particles.min.js"></script>
+    <script src="/javascripts/particlesapp.js"></script>
 </body>
 </html>
