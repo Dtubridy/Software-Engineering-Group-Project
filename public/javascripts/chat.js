@@ -1,6 +1,7 @@
 $(function(){
    	//make connection
 	var socket = io.connect('http://danu7.it.nuigalway.ie:8628')
+	
 
 	//buttons and inputs
 	var message = $("#message")
@@ -9,6 +10,8 @@ $(function(){
 	var send_username = $("#send_username")
 	var chatroom = $("#chatroom")
 	var feedback = $("#feedback")
+	var msgcon = $("#msg-con")
+	
 
 	//Emit message
 	send_message.click(function(){
@@ -19,7 +22,8 @@ $(function(){
 	socket.on("new_message", (data) => {
 		feedback.html('');
 		message.val('');
-		chatroom.append("<p class='message'>" + data.username + ": " + data.message + "</p>")
+		chatroom.append("<p class='message'>" + data.username + ": " + data.message + "</p>");
+		chatroom.animate({scrollTop: chatroom.prop("scrollHeight")}, 500)
 	})
 
 	//Emit a username
@@ -36,4 +40,10 @@ $(function(){
 	socket.on('typing', (data) => {
 		feedback.html("<p><i>" + data.username + " is typing a message..." + "</i></p>")
 	})
+
+	
+
+	
+   	
 });
+	

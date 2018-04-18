@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Comment = require('../models/comments');
+//var Message = require('../models/messages');
 var jwt = require('jsonwebtoken');
 
 /* GET home page. */
@@ -17,8 +18,8 @@ router.get('/feed', function(req, res, next) {
             res.render('feed');
         }
     }catch (err) {
-            res.json({
-                "status": "error",
+            res.render('login')({
+                
                 "body": [
                     "You are not logged in."
                 ]
@@ -132,7 +133,42 @@ router.get('/Test', function(req, res, next) {
   router.get('/ligaPortugalFixtures', function(req, res, next) {
   res.render('fixtures/ligaPortugalFixtures', { title: 'Express' });
 });
+router.get('/premScores', function(req, res, next) {
+  res.render('scores/premScores', { title: 'Express' });
+});
+router.get('/chamScores', function(req, res, next) {
+  res.render('scores/chamScores', { title: 'Express' });
+});
 
+router.get('/league1Scores', function(req, res, next) {
+  res.render('scores/league1Scores', { title: 'Express' });
+});
+
+router.get('/league2Scores', function(req, res, next) {
+  res.render('scores/league2Scores', { title: 'Express' });
+});
+
+router.get('/bundScores', function(req, res, next) {
+  res.render('scores/bundScores', { title: 'Express' });
+});
+
+router.get('/portugalScores', function(req, res, next) {
+  res.render('scores/portugalScores', { title: 'Express' });
+});
+
+router.get('/eredScores', function(req, res, next) {
+  res.render('scores/eredScores', { title: 'Express' });
+});
+
+router.get('/laLigaScores', function(req, res, next) {
+  res.render('scores/laLigaScores', { title: 'Express' });
+});
+router.get('/ligue1Scores', function(req, res, next) {
+  res.render('scores/ligue1Scores', { title: 'Express' });
+});
+router.get('/serieAScores', function(req, res, next) {
+  res.render('scores/serieAScores', { title: 'Express' });
+});
 
 router.get('/chat', function(req, res, next) {
   res.render('chat', { title: 'Express' });
@@ -204,6 +240,45 @@ function verifyJwt(jwtString) {
     var value = jwt.verify(jwtString, 'CSIsTheWorst');
     return value;
 }
+
+
+/*
+router.post('/addMessages', function(req, res, next) {   
+    // Extract the request body which contains the message
+    messages = new Message(req.body);
+    messages.save(function (err, savedMessage) {
+        if (err)
+            throw err;
+
+        res.json({
+            "id": savedMessage._id
+        });
+    });
+})
+
+router.get('/getMessages', function(req, res, next) {
+
+    Message.find({}, function (err, messages) {
+        if (err)
+            res.send(err);
+        res.json(messages);
+    });
+});
+
+router.put('/updateMessages/:id', function(req, res, next){
+
+    var id = req.params.id;
+    Message.update({_id:id}, req.body, function (err) {
+        if (err)
+            res.send(err);
+
+        res.json({status : "Successfully updated the document"});
+    });
+});
+
+*/
+
+
 
 
 

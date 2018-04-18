@@ -18,24 +18,25 @@ body {
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
     font-family:"Comic Sans MS", cursive, sans-serif;
-    font-weight: 1000;
+    font-weight: 600;
     color: black;
 }
 
 h1 {
 	font-size: 40px;
         color : black;
+        
 }
 
 h2 {
-       color : black;
-       font-weight: 500;
+       color : green;
+       font-weight: 350;
 
 }
 
 h3 {
 	color: black;
-	font-weight: 400;
+	font-weight:600;
 }
 
 h4 {
@@ -104,7 +105,8 @@ p {
 
 /* Links */
 a {
-    color: white;
+    color: black;
+    font-size: 17px;
     word-wrap: break-word;
 
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
