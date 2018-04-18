@@ -104,7 +104,7 @@
               <li><a href="/about">About us/ Help</a></li>
               <li><a href="/users/login">Sign in</a></li>
               
-              <li><a href="#" id="logout">Logout</a></li>
+              <li><a href="#" id="logout" onclick="signOut();">Logout</a></li>
           </ul>
         </div>
           <!--/.nav-collapse -->
@@ -116,6 +116,15 @@
 
     {{{body}}}
       <!-- Placed at the end of the document so the pages load faster -->
+    <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.min.js"></script>
