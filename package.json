@@ -6,7 +6,6 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "angular": "*",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
